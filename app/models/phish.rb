@@ -1,0 +1,2 @@
+class Phish < ApplicationRecord
+end

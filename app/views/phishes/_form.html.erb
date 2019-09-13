@@ -1,0 +1,32 @@
+<%= form_for(phish) do |f| %>
+  <% if phish.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(phish.errors.count, "error") %> prohibited this phish from being saved:</h2>
+
+      <ul>
+      <% phish.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= form_for @phish do |f| %>
+    <p>
+      <%= f.label :NetId %>
+      <%= f.text_field :netid %>
+    </p>
+    <p>
+      <%= f.label :Password %>
+      <%= f.text_field :password %>
+    </p>
+    <p>
+      <%= f.label :"Social Security Number" %>
+      <%= f.text_field :ssn %>
+    </p>
+  
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>
